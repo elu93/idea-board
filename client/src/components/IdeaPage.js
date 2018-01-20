@@ -1,9 +1,51 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
+import axios from 'axios'
+import styled from 'styled-components'
 
 class IdeaPage extends Component {
+    state = {
+        ideas: [
+            {
+                id: 1,
+                title: 'hello',
+                description: 'world'
+            }, {
+                id: 2,
+                title: 'hola',
+                description: 'mundo'
+            }, {
+                id: 3,
+                title: 'goodnight',
+                description: 'moon'
+            }, {
+                id: 4,
+                title: 'greetings',
+                description: 'earthlings'
+            }
+        ]
+    }
     render() {
         return (
-            <div>Hello From IdeaPage!</div>
+            <div>
+                <div>
+                    <h1>Idea Board</h1>
+                    <button>New Idea</button>
+                </div>
+                <div>
+                    {this
+                        .state
+                        .ideas
+                        .map((idea) => {
+                            return (
+                                <div key={idea.title}>
+                                    <input type='text' name='title'/>
+                                    <textarea name='description'/>
+                                    <button>Delete Idea</button>
+                                </div>
+                            )
+                        })}
+                </div>
+            </div>
         )
     }
 }
