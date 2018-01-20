@@ -25,6 +25,9 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/client/build/index.html')
 })
 
+const ideasController = require('./controllers/ideasController')
+app.use('/api/ideas', ideasController)
+
 const PORT = process.env.PORT || 3001
 app.listen(PORT, () => {
     console.log('Magic is happening on port ' + PORT)
