@@ -7,7 +7,7 @@ const Idea = require('./models/Idea')
 
 const mars = new Idea({
     title: 'Fly to Mars!',
-    description: "Earth isn't Red enough. Let's move to another planet."
+    description: "We need an alternative plan to expand human population."
 })
 
 const tesla = new Idea({
